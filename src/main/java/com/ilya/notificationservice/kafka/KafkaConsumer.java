@@ -12,7 +12,7 @@ public class KafkaConsumer {
 
     private final OrderService orderService;
 
-    @KafkaListener(topics = "send-order", groupId = "my_consumer")
+    @KafkaListener(topics = "order-topic", groupId = "my_consumer")
     public void listen(OrderViewDto orderDto){
         orderService.save(orderDto);
     }
